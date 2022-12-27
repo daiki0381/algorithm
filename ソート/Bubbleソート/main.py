@@ -1,6 +1,3 @@
-# O(n ** 2)
-# 安定ソート
-
 from typing import List
 
 def bubble_sort(numbers: List[int]) -> List[int]:
