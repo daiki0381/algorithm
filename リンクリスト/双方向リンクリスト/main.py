@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Any
+from typing import Any, Optional
 
 class Node(object):
     def __init__(
@@ -74,6 +74,34 @@ class DoublyLinkedList(object):
             current_node = None
             return
 
+    def reverse_iterative(self) -> None:
+        previous_node = None
+        current_node = self.head
+        while current_node:
+            previous_node = current_node.prev
+            current_node.prev = current_node.next
+            current_node.next = previous_node
+            current_node = current_node.prev
+
+        if previous_node:
+            self.head = previous_node.prev
+
+    def reverse_recursive(self) -> None:
+        def _reverse_recursive(current_node: Node) -> Optional[Node]:
+            if current_node is None:
+                return None
+
+            previous_node = current_node.prev
+            current_node.prev = current_node.next
+            current_node.next = previous_node
+
+            if current_node.prev is None:
+                return current_node
+
+            return _reverse_recursive(current_node.prev)
+
+        self.head = _reverse_recursive(self.head)
+
 if __name__ == "__main__":
     d = DoublyLinkedList()
     d.append(1)
@@ -81,7 +109,10 @@ if __name__ == "__main__":
     d.append(3)
     d.print()
     print("######")
-    d.remove(2)
+    d.reverse_iterative()
+    d.print()
+    print("######")
+    d.reverse_recursive()
     d.print()
 
 """
@@ -89,6 +120,11 @@ if __name__ == "__main__":
 2
 3
 ######
+3
+2
 1
+######
+1
+2
 3
 """
