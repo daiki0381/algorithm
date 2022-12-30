@@ -143,6 +143,15 @@ import math
 
 print(math.gcd(144, 264, 84, 276)) # => 12
 
+# 最小公倍数
+# 倍数 => ある整数を何倍かした数
+# 最小公倍数 => 共通する倍数の中で一番小さな数のこと
+# 例) 27、9、3 => 27
+
+import math
+
+print(math.lcm(27, 9, 3)) # => 27
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
