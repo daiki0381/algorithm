@@ -135,6 +135,14 @@ def make_prime_factorization_list(n):
 
 print(make_prime_factorization_list(30))  # => [2, 3, 5]
 
+# 最大公約数
+# 共通する約数の中で一番大きな数のこと
+# 例) 24、36 => 12
+
+import math
+
+print(math.gcd(144, 264, 84, 276)) # => 12
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
