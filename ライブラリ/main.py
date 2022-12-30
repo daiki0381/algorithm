@@ -97,6 +97,22 @@ N = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 cumulative_sum_list = [i for i in accumulate(N)]
 print(cumulative_sum_list)  # => [1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
 
+# 約数全列挙
+# 約数 => ある整数をわり切ることができる整数
+# 例) 30 => 1、2、3、5、6、10、15、30
+
+def make_divisors(n):
+    divisors = []
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+            if i != n // i:
+                divisors.append(n // i)
+    divisors.sort()
+    return divisors
+
+print(make_divisors(30))  # => [1, 2, 3, 5, 6, 10, 15, 30]
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
