@@ -152,6 +152,23 @@ import math
 
 print(math.lcm(27, 9, 3)) # => 27
 
+# n以下の素数全列挙
+# 素数 => 1より大きい自然数のうち、1とその数でしか割り切れないもの
+# エラトステネスの篩
+
+def primes(n):
+    is_prime = [True] * (n + 1)
+    is_prime[0] = False
+    is_prime[1] = False
+    for i in range(2, int(n**0.5) + 1):
+        if not is_prime[i]:
+            continue
+        for j in range(i * 2, n + 1, i):
+            is_prime[j] = False
+    return [i for i in range(n + 1) if is_prime[i]]
+
+print(primes(50)) # => [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
