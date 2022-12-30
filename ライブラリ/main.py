@@ -113,6 +113,28 @@ def make_divisors(n):
 
 print(make_divisors(30))  # => [1, 2, 3, 5, 6, 10, 15, 30]
 
+# 素因数分解
+# 自然数を素数の積になるよう分解すること
+# 例) 30 => 2、3、5
+
+def make_prime_factorization_list(n):
+    prime_factorization_list = []
+    while n % 2 == 0:
+        prime_factorization_list.append(2)
+        n //= 2
+    f = 3
+    while f * f <= n:
+        if n % f == 0:
+            prime_factorization_list.append(f)
+            n //= f
+        else:
+            f += 2
+    if n != 1:
+        prime_factorization_list.append(n)
+    return prime_factorization_list
+
+print(make_prime_factorization_list(30))  # => [2, 3, 5]
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
