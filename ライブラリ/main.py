@@ -35,7 +35,7 @@ print(list(enumerate([50, 60, 70])))  # => [(0, 50), (1, 60), (2, 70)]
 
 # 二次元平面上で原点を中心に反時計回りに回転させた座標
 
-a, b, d = map(int, input().split())  # input
+a, b, d = map(int, input().split())
 
 import math
 
