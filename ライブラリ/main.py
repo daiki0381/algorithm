@@ -169,6 +169,19 @@ def primes(n):
 
 print(primes(50)) # => [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 
+# 素数判定
+
+import math
+
+def is_prime(n):
+    sqrt_n = math.ceil(math.sqrt(n))
+    for i in range(2, sqrt_n):
+        if n % i == 0:
+            return False
+    return True
+
+print(is_prime(53)) # => True
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
