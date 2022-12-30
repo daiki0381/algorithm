@@ -69,5 +69,15 @@ def binary_search(numbers: List[int], value: int) -> Optional[int]:
     return None
 
 numbers = [0, 1, 5, 7, 9, 11, 15, 20, 24]
-print(binary_search(numbers, 15)) # => 6
-print(binary_search(numbers, 2)) # => None
+print(binary_search(numbers, 15))  # => 6
+print(binary_search(numbers, 2))  # => None
+
+# 左シフト
+# 指定した桁だけ左にずらして、空いた桁には0を入れる
+
+print(1 << 4)  # => 16
+
+# 論理積
+# 両方が1の時に1を入れる
+
+print(5 & 4)  # => 4
