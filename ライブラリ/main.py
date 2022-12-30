@@ -81,3 +81,63 @@ print(1 << 4)  # => 16
 # 両方が1の時に1を入れる
 
 print(5 & 4)  # => 4
+
+# 全探索
+# 選ぶ数が決まっている時に使用する
+
+n = 5
+for i in range(n):
+    for j in range(i + 1, n):
+        for k in range(j + 1, n):
+            print(i, j, k)
+
+"""
+0 1 2
+0 1 3
+0 1 4
+0 2 3
+0 2 4
+0 3 4
+1 2 3
+1 2 4
+1 3 4
+2 3 4
+"""
+
+# bit全探索
+# 選ぶ数が決まっていない時に使用する => 全ての選択肢を選んでもいいし、選ばなくてもいい時に使用する
+
+n = 4
+for i in range(1 << n):
+    use = [False] * n
+    for j in range(n):
+        if i & (1 << j):
+            use[j] = True
+    print(use)
+
+"""
+[False, False, False, False]
+[True, False, False, False]
+[False, True, False, False]
+[True, True, False, False]
+[False, False, True, False]
+[True, False, True, False]
+[False, True, True, False]
+[True, True, True, False]
+[False, False, False, True]
+[True, False, False, True]
+[False, True, False, True]
+[True, True, False, True]
+[False, False, True, True]
+[True, False, True, True]
+[False, True, True, True]
+[True, True, True, True]
+"""
+
+from itertools import product
+
+list(product([0, 1], repeat=n))
+
+"""
+[(0, 0, 0, 0), (0, 0, 0, 1), (0, 0, 1, 0), (0, 0, 1, 1), (0, 1, 0, 0), (0, 1, 0, 1), (0, 1, 1, 0), (0, 1, 1, 1), (1, 0, 0, 0), (1, 0, 0, 1), (1, 0, 1, 0), (1, 0, 1, 1), (1, 1, 0, 0), (1, 1, 0, 1), (1, 1, 1, 0), (1, 1, 1, 1)]
+"""
