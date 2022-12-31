@@ -248,3 +248,7 @@ print(math.sqrt(2))  # => 1.4142135623730951
 # 部分文字列
 
 print("aa" in "aabbcc") # => True
+
+# 1の位
+
+print(1234 % 10) # => 4
