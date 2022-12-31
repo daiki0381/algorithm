@@ -244,3 +244,7 @@ print(a_rotated, b_rotated)
 import math
 
 print(math.sqrt(2))  # => 1.4142135623730951
+
+# 部分文字列
+
+print("aa" in "aabbcc") # => True
