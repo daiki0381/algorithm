@@ -261,3 +261,7 @@ print("aa" in "aabbcc") # => True
 # 1の位
 
 print(1234 % 10) # => 4
+
+# 進数の変換
+
+print(int("1011", 2)) # => 11
