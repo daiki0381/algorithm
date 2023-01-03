@@ -96,13 +96,12 @@ print(binary_search(numbers, 15))  # => 6
 print(binary_search(numbers, 2))  # => None
 
 # 累積和
-# 最初からi番目までの総和
+# 最初からN番目までの総和
 
 from itertools import accumulate
 
-N = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-cumulative_sum_list = [i for i in accumulate(N)]
-print(cumulative_sum_list)  # => [1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
+cumulative_sum = [i for i in accumulate([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])]
+print(cumulative_sum)  # => [1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
 
 # 約数全列挙
 # 約数 => ある整数をわり切ることができる整数
