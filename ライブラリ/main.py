@@ -216,7 +216,8 @@ print(
 
 from decimal import Decimal, ROUND_HALF_UP
 
-print(int(Decimal(5).quantize(Decimal("1E1"), rounding=ROUND_HALF_UP)))  # => 10
+N = 5
+print(int(Decimal(N).quantize(Decimal("1E1"), rounding=ROUND_HALF_UP)))  # => 10
 
 # 2組の総数
 # 制約
