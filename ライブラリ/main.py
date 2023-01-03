@@ -135,29 +135,28 @@ import math
 
 print(math.lcm(27, 9, 3))  # => 27
 
-# 素因数分解
-# 自然数を素数の積になるよう分解すること
+# 素因数分解 => 自然数(0を含まない正の整数)を素数の積になるよう分解すること
 # 例) 30 => 2、3、5
 
 
-def make_prime_factorization_list(n):
-    prime_factorization_list = []
+def make_prime_factorization(n):
+    prime_factorization = []
     while n % 2 == 0:
-        prime_factorization_list.append(2)
+        prime_factorization.append(2)
         n //= 2
     f = 3
     while f * f <= n:
         if n % f == 0:
-            prime_factorization_list.append(f)
+            prime_factorization.append(f)
             n //= f
         else:
             f += 2
     if n != 1:
-        prime_factorization_list.append(n)
-    return prime_factorization_list
+        prime_factorization.append(n)
+    return prime_factorization
 
 
-print(make_prime_factorization_list(30))  # => [2, 3, 5]
+print(make_prime_factorization(30))  # => [2, 3, 5]
 
 
 # n以下の素数全列挙
