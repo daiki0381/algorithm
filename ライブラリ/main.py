@@ -77,10 +77,8 @@ print(
 
 # 二分探索
 
-from typing import List, Optional
 
-
-def binary_search(numbers: List[int], value: int) -> Optional[int]:
+def binary_search(numbers, value):
     left, right = 0, len(numbers) - 1
     while left <= right:
         mid = (left + right) // 2
