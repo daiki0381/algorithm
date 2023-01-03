@@ -286,3 +286,19 @@ for n in reversed(range(N)):
 1
 0
 """
+
+# 配列の先頭と末尾の要素を取得
+
+from collections import deque
+
+q = deque([0, 1, 2, 3, 4, 5])
+while q:
+    print(q.popleft(), end=" ")
+    print(q.pop(), end=" ")
+    print()
+
+"""
+0 5
+1 4
+2 3 
+"""
