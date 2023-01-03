@@ -275,12 +275,12 @@ print(1234 % 10)  # => 4
 
 print(int("1011", 2))  # => 11
 
-# Mまでの総和
+# Nまでの総和
 
-M = 10
-print(M * (M + 1) // 2)  # => 55
+N = 10
+print(N * (N + 1) // 2)  # => 55
 
-# forループをN-1から逆順
+# forループをN-1のindexから逆順
 
 N = 3
 for n in reversed(range(N)):
