@@ -274,3 +274,15 @@ print(int("1011", 2)) # => 11
 
 M = 10
 print(M * (M + 1) // 2) # => 55
+
+# forループをNから逆順
+
+N = 3
+for n in reversed(range(N)):
+    print(n)
+
+"""
+2
+1
+0
+"""
