@@ -208,6 +208,23 @@ def fibonacci(n):
 
 print(fibonacci(10))  # => 55
 
+# フィボナッチ数列 (再帰)
+
+
+def fibonacci(n):
+    if n == 1 or n == 2:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+print(fibonacci(10))  # => 55
+
+"""
+nが3の場合
+①fibonacci(2) + fibonacci(1)
+②1 + 1 # => 2
+"""
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
