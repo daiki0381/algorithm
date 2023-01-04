@@ -193,6 +193,21 @@ def is_prime(n):
 
 print(is_prime(53))  # => True
 
+# フィボナッチ数列 (動的計画法)
+# フィボナッチ数列 => 初項と第2項を1とし、第3項以降は前2項の和となる数列 (1, 1, 2, 3, 5, 8, 13, 21, 34)
+# 動的計画法 => 途中の計算結果を表の形式で保持しておくことで計算量を節約するアルゴリズム
+
+
+def fibonacci(n):
+    fibonacci_list = [1] * (n + 1)
+    # 第3項以降は前2項の和
+    for i in range(2, n + 1):
+        fibonacci_list[i] = fibonacci_list[i - 1] + fibonacci_list[i - 2]
+    return fibonacci_list[n - 1]
+
+
+print(fibonacci(10))  # => 55
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
