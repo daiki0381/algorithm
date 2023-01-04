@@ -258,6 +258,29 @@ num_list = [5, 3, 2]
 limit = 10
 print(max_sum(num_list, limit))  # => 10
 
+# ナップサック問題 (bit全探索)
+# 問 ) https://atcoder.jp/contests/dp/tasks/dp_d
+# 問題点 => 計算量がO(2 ** N)なので、Nが増えると計算量が増大する => 今回の問題の制約は1≤N≤100なので、2 ** 100=1.2676506e+30となりTLE
+
+from itertools import product
+
+N, W = map(int, input().split())
+wv = [list(map(int, input().split())) for _ in range(N)]
+sum_values = []
+patterns = product([0, 1], repeat=N)
+
+for pattern in patterns:
+    weight = 0
+    value = 0
+    for i in range(N):
+        if pattern[i] == 1:
+            weight += wv[i][0]
+            value += wv[i][1]
+    if weight <= W:
+        sum_values.append(value)
+
+print(max(sum_values))
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
