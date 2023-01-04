@@ -225,6 +225,39 @@ nが3の場合
 ②1 + 1 # => 2
 """
 
+# 部分和 (動的計画法)
+# 問 ) それぞれ5円、3円、2円の駄菓子が売ってあります。お小遣いを10円持っている時、最大何円分の駄菓子が買えるか (ただし、同じ種類の駄菓子はひとつまでしか買えないとします。)
+
+
+def max_sum(num_list, limit):
+    num_list_len = len(num_list)
+    dp_list = [[0 for _ in range(limit + 1)] for _ in range(num_list_len)]
+
+    # 1番目の商品
+    for i in range(limit + 1):
+        if i >= num_list[0]:
+            dp_list[0][i] = num_list[0]
+
+    # 2番目以降の商品
+    for i in range(1, num_list_len):
+        for j in range(limit + 1):
+            # i番目の商品を買わなかった場合
+            no_choice = dp_list[i - 1][j]
+            if j < num_list[i]:
+                dp_list[i][j] = no_choice
+            else:
+                # i番目の商品を買った場合
+                # 1つ上の段のi番目の商品の金額分戻った列の金額+i番目の商品の金額
+                choice = dp_list[i - 1][j - num_list[i]] + num_list[i]
+                dp_list[i][j] = max(choice, no_choice)
+
+    return dp_list[num_list_len - 1][limit]
+
+
+num_list = [5, 3, 2]
+limit = 10
+print(max_sum(num_list, limit))  # => 10
+
 # 組み合わせ (重複なし)
 
 from itertools import combinations
