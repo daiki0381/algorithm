@@ -422,3 +422,13 @@ while q:
 1 4
 2 3
 """
+
+# ラスト1周の算出
+# https://atcoder.jp/contests/abc281/tasks/abc281_c
+# 入 ) 3 600
+# 入 ) 180 240 120
+
+N, T = map(int, input().split())
+A = list(map(int, input().split()))
+T %= sum(A)
+print(T)  # => 60
