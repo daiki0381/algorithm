@@ -448,3 +448,15 @@ print(
 # https://qiita.com/kitadakyou/items/6f877edd263f097e78f4
 
 print(5 in {1, 2, 3, 4, 5, 6, 7, 8, 9, 10})  # => True
+
+# defaultdict
+# 存在しないキーを指定した場合、設定した関数の初期値が返却される
+
+from collections import defaultdict
+
+d = defaultdict(int)
+d["name"] = "taro"
+d["age"] = 20
+print(d["name"])  # => taro
+print(d["age"])  # => 20
+print(d["gender"])  # => 0
