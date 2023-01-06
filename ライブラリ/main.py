@@ -494,3 +494,9 @@ d["age"] = 20
 print(d["name"])  # => taro
 print(d["age"])  # => 20
 print(d["gender"])  # => 0
+
+# 配列内の要素数をハッシュ化
+
+from collections import Counter
+
+print(Counter([2, 7, 1, 8, 2, 8]))  # => Counter({2: 2, 8: 2, 7: 1, 1: 1})
