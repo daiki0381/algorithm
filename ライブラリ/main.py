@@ -500,3 +500,18 @@ print(d["gender"])  # => 0
 from collections import Counter
 
 print(Counter([2, 7, 1, 8, 2, 8]))  # => Counter({2: 2, 8: 2, 7: 1, 1: 1})
+
+# 部分文字列の個数
+
+from itertools import combinations
+
+s = "abc"
+s_len = len(s)
+substring_set = set()
+
+for i in range(1, s_len + 1):
+    combs = combinations(s, i)
+    for comb in combs:
+        substring_set.add(comb)
+
+print(len(substring_set))  # => 7
