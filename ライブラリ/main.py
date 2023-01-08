@@ -556,3 +556,31 @@ for i in range(1, s_len + 1):
         substring_set.add(comb)
 
 print(len(substring_set))  # => 7
+
+# BMI
+# 問 ) あなたは現在、ダイエット支援アプリを作ろうとしています。ユーザーが、現在の体重 w [kg] と現在の身長 h [cm] と目標BMI bを入力すると、最小何kg体重を落とすことで目標BMIを達成できるかを表示させる機能を作りたいです。BMIの計算式は BMI = 10000 * 体重 [kg] / 身長 [cm] / 身長 [cm] です。しかし現在、全ての入出力機能が非負整数にしか対応していません。そのため、例えば0.3kg体重を落とせば目標BMIを達成できるとしても必要量より少し多いですが非負整数である1kgの体重を落とすように表示しなければなりません。既に現在の体重、現在の身長で目標BMIを達成している場合は、0を出力してください。
+# 標準入力 ) 90 180 23
+
+import sys
+import math
+
+
+def main(lines):
+    w, h, b = map(int, lines[0].split())
+    # 現在のBMI
+    current_bmi = 10000 * w / h / h
+    if current_bmi <= b:
+        print(0)
+    else:
+        # 目標BMIを達成させるための体重を算出
+        goal_weight = b / 10000 * h * h
+        # 落とす必要のある体重
+        lose_weight = w - goal_weight
+        print(math.ceil(lose_weight))  # => 16
+
+
+if __name__ == "__main__":
+    lines = []
+    for l in sys.stdin:
+        lines.append(l.rstrip("\r\n"))
+    main(lines)
