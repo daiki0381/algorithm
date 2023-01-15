@@ -584,3 +584,15 @@ if __name__ == "__main__":
     for l in sys.stdin:
         lines.append(l.rstrip("\r\n"))
     main(lines)
+
+# アルファベット => 数値
+
+
+def convert_alpha_to_num(alpha):
+    num = 0
+    for index, item in enumerate(list(alpha)):
+        num += pow(26, len(alpha) - index - 1) * (ord(item) - ord("A") + 1)
+    return num
+
+
+print(convert_alpha_to_num("ALL"))  # => 1000
