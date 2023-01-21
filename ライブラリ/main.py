@@ -596,3 +596,9 @@ def convert_alpha_to_num(alpha):
 
 
 print(convert_alpha_to_num("ALL"))  # => 1000
+
+# 回文判定
+
+S = input()
+if S == S[::-1]:
+    print("回文")
