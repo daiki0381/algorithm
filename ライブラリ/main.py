@@ -641,3 +641,9 @@ if degree_1 == 2 and degree_2 == N - 2 and connected_component_num == 1:
     print("Yes")
 else:
     print("No")
+
+# 重複判定
+
+
+def is_duplicate(list):
+    return len(list) != len(set(list))
